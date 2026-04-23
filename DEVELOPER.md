@@ -71,6 +71,10 @@ Owns lead, opportunity, and pre-sales readiness state so commercial handoff stay
 | Action | `crm.leads.capture` | Permission: `crm.leads.write` | Capture CRM Lead<br>Idempotent<br>Audited |
 | Action | `crm.opportunities.advance` | Permission: `crm.opportunities.write` | Advance Opportunity<br>Non-idempotent<br>Audited |
 | Action | `crm.handoffs.prepare` | Permission: `crm.opportunities.write` | Prepare Sales Handoff<br>Non-idempotent<br>Audited |
+| Action | `crm.leads.hold` | Permission: `crm.leads.write` | Place Record On Hold<br>Non-idempotent<br>Audited |
+| Action | `crm.leads.release` | Permission: `crm.leads.write` | Release Record Hold<br>Non-idempotent<br>Audited |
+| Action | `crm.leads.amend` | Permission: `crm.leads.write` | Amend Record<br>Non-idempotent<br>Audited |
+| Action | `crm.leads.reverse` | Permission: `crm.leads.write` | Reverse Record<br>Non-idempotent<br>Audited |
 | Resource | `crm.leads` | Portal disabled | Lead records with routing, qualification, and dedupe-ready state.<br>Purpose: Keep pre-sales intake governed before a commercial commitment exists.<br>Admin auto-CRUD enabled<br>Fields: `title`, `recordState`, `approvalState`, `postingState`, `fulfillmentState`, `updatedAt` |
 | Resource | `crm.opportunities` | Portal disabled | Opportunities, stages, and pre-sales commercial context.<br>Purpose: Track demand readiness before Sales becomes the commercial source of truth.<br>Admin auto-CRUD enabled<br>Fields: `label`, `status`, `requestedAction`, `updatedAt` |
 | Resource | `crm.forecasts` | Portal disabled | Forecast and handoff-readiness views derived from active pipeline state.<br>Purpose: Give operators and leadership a stable pre-sales projection surface.<br>Admin auto-CRUD enabled<br>Fields: `severity`, `status`, `reasonCode`, `updatedAt` |
@@ -156,11 +160,11 @@ stateDiagram-v2
 ### 1. Host wiring
 
 ```ts
-import { manifest, createPrimaryRecordAction, BusinessPrimaryResource, jobDefinitions, workflowDefinitions, adminContributions, uiSurface } from "@plugins/crm-core";
+import { manifest, captureCrmLeadAction, BusinessPrimaryResource, jobDefinitions, workflowDefinitions, adminContributions, uiSurface } from "@plugins/crm-core";
 
 export const pluginSurface = {
   manifest,
-  createPrimaryRecordAction,
+  captureCrmLeadAction,
   BusinessPrimaryResource,
   jobDefinitions,
   workflowDefinitions,
@@ -174,10 +178,10 @@ Use this pattern when your host needs to register the plugin’s declared export
 ### 2. Action-first orchestration
 
 ```ts
-import { manifest, createPrimaryRecordAction } from "@plugins/crm-core";
+import { manifest, captureCrmLeadAction } from "@plugins/crm-core";
 
 console.log("plugin", manifest.id);
-console.log("action", createPrimaryRecordAction.id);
+console.log("action", captureCrmLeadAction.id);
 ```
 
 - Prefer action IDs as the stable integration boundary.
@@ -219,7 +223,7 @@ console.log("action", createPrimaryRecordAction.id);
 
 ### Current truth
 
-- Exports 3 governed actions: `crm.leads.capture`, `crm.opportunities.advance`, `crm.handoffs.prepare`.
+- Exports 7 governed actions: `crm.leads.capture`, `crm.opportunities.advance`, `crm.handoffs.prepare`, `crm.leads.hold`, `crm.leads.release`, `crm.leads.amend`, `crm.leads.reverse`.
 - Owns 3 resource contracts: `crm.leads`, `crm.opportunities`, `crm.forecasts`.
 - Publishes 2 job definitions with explicit queue and retry policy metadata.
 - Publishes 1 workflow definition with state-machine descriptions and mandatory steps.
@@ -233,7 +237,7 @@ console.log("action", createPrimaryRecordAction.id);
 
 ### Current gaps
 
-- Repo-local documentation verification entrypoints were missing before this pass and need to stay green as the repo evolves.
+- No extra gaps were discovered beyond the plugin’s declared boundaries.
 
 ### Recommended next
 

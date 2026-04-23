@@ -6,7 +6,11 @@ export const scenarioDefinitions = [
     "actionIds": [
       "crm.leads.capture",
       "crm.opportunities.advance",
-      "crm.handoffs.prepare"
+      "crm.handoffs.prepare",
+      "crm.leads.hold",
+      "crm.leads.release",
+      "crm.leads.amend",
+      "crm.leads.reverse"
     ],
     "downstreamTargets": {
       "create": [],
@@ -26,7 +30,11 @@ export const scenarioDefinitions = [
     "actionIds": [
       "crm.leads.capture",
       "crm.opportunities.advance",
-      "crm.handoffs.prepare"
+      "crm.handoffs.prepare",
+      "crm.leads.hold",
+      "crm.leads.release",
+      "crm.leads.amend",
+      "crm.leads.reverse"
     ],
     "downstreamTargets": {
       "create": [],
@@ -46,7 +54,11 @@ export const scenarioDefinitions = [
     "actionIds": [
       "crm.leads.capture",
       "crm.opportunities.advance",
-      "crm.handoffs.prepare"
+      "crm.handoffs.prepare",
+      "crm.leads.hold",
+      "crm.leads.release",
+      "crm.leads.amend",
+      "crm.leads.reverse"
     ],
     "downstreamTargets": {
       "create": [],

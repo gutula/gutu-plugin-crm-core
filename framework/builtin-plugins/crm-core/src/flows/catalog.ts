@@ -1,10 +1,18 @@
 import {
   advancePrimaryRecord,
+  amendPrimaryRecord,
   createPrimaryRecord,
+  placePrimaryRecordOnHold,
   reconcilePrimaryRecord,
+  releasePrimaryRecordHold,
+  reversePrimaryRecord,
   type AdvancePrimaryRecordInput,
+  type AmendPrimaryRecordInput,
   type CreatePrimaryRecordInput,
-  type ReconcilePrimaryRecordInput
+  type PlacePrimaryRecordOnHoldInput,
+  type ReconcilePrimaryRecordInput,
+  type ReleasePrimaryRecordHoldInput,
+  type ReversePrimaryRecordInput
 } from "../services/main.service";
 
 export const businessFlowDefinitions = [
@@ -25,6 +33,30 @@ export const businessFlowDefinitions = [
     "label": "Prepare Sales Handoff",
     "phase": "reconcile",
     "methodName": "prepareSalesHandoff"
+  },
+  {
+    "id": "crm.leads.hold",
+    "label": "Place Record On Hold",
+    "phase": "hold",
+    "methodName": "placeRecordOnHold"
+  },
+  {
+    "id": "crm.leads.release",
+    "label": "Release Record Hold",
+    "phase": "release",
+    "methodName": "releaseRecordHold"
+  },
+  {
+    "id": "crm.leads.amend",
+    "label": "Amend Record",
+    "phase": "amend",
+    "methodName": "amendRecord"
+  },
+  {
+    "id": "crm.leads.reverse",
+    "label": "Reverse Record",
+    "phase": "reverse",
+    "methodName": "reverseRecord"
   }
 ] as const;
 
@@ -38,4 +70,20 @@ export async function advanceOpportunity(input: AdvancePrimaryRecordInput) {
 
 export async function prepareSalesHandoff(input: ReconcilePrimaryRecordInput) {
   return reconcilePrimaryRecord(input);
+}
+
+export async function placeRecordOnHold(input: PlacePrimaryRecordOnHoldInput) {
+  return placePrimaryRecordOnHold(input);
+}
+
+export async function releaseRecordHold(input: ReleasePrimaryRecordHoldInput) {
+  return releasePrimaryRecordHold(input);
+}
+
+export async function amendRecord(input: AmendPrimaryRecordInput) {
+  return amendPrimaryRecord(input);
+}
+
+export async function reverseRecord(input: ReversePrimaryRecordInput) {
+  return reversePrimaryRecord(input);
 }

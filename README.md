@@ -26,7 +26,7 @@ Lead, opportunity, campaign, and pre-sales engagement records with governed hand
 
 Owns lead, opportunity, and pre-sales readiness state so commercial handoff stays explicit before Sales becomes the demand source of truth.
 
-- Exports 3 governed actions: `crm.leads.capture`, `crm.opportunities.advance`, `crm.handoffs.prepare`.
+- Exports 7 governed actions: `crm.leads.capture`, `crm.opportunities.advance`, `crm.handoffs.prepare`, `crm.leads.hold`, `crm.leads.release`, `crm.leads.amend`, `crm.leads.reverse`.
 - Owns 3 resource contracts: `crm.leads`, `crm.opportunities`, `crm.forecasts`.
 - Publishes 2 job definitions with explicit queue and retry policy metadata.
 - Publishes 1 workflow definition with state-machine descriptions and mandatory steps.
@@ -71,7 +71,7 @@ This tier is justified because unit coverage exists, contract coverage exists, i
 
 | Surface | Count | Details |
 | --- | --- | --- |
-| Actions | 3 | `crm.leads.capture`, `crm.opportunities.advance`, `crm.handoffs.prepare` |
+| Actions | 7 | `crm.leads.capture`, `crm.opportunities.advance`, `crm.handoffs.prepare`, `crm.leads.hold`, `crm.leads.release`, `crm.leads.amend`, `crm.leads.reverse` |
 | Resources | 3 | `crm.leads`, `crm.opportunities`, `crm.forecasts` |
 | Jobs | 2 | `crm.projections.refresh`, `crm.reconciliation.run` |
 | Workflows | 1 | `crm-opportunity-lifecycle` |
@@ -96,10 +96,10 @@ bun run docs:check
 ```
 
 ```ts
-import { manifest, createPrimaryRecordAction, BusinessPrimaryResource, jobDefinitions, workflowDefinitions, adminContributions, uiSurface } from "@plugins/crm-core";
+import { manifest, captureCrmLeadAction, BusinessPrimaryResource, jobDefinitions, workflowDefinitions, adminContributions, uiSurface } from "@plugins/crm-core";
 
 console.log(manifest.id);
-console.log(createPrimaryRecordAction.id);
+console.log(captureCrmLeadAction.id);
 console.log(BusinessPrimaryResource.id);
 ```
 

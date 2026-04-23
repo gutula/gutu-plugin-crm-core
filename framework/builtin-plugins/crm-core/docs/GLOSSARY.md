@@ -9,6 +9,10 @@
 | crm.leads.capture | Capture CRM Lead |
 | crm.opportunities.advance | Advance Opportunity |
 | crm.handoffs.prepare | Prepare Sales Handoff |
+| crm.leads.hold | Place Record On Hold |
+| crm.leads.release | Release Record Hold |
+| crm.leads.amend | Amend Record |
+| crm.leads.reverse | Reverse Record |
 | crm.projections.refresh | Job definition queued on `crm-projections`. |
 | crm.reconciliation.run | Job definition queued on `crm-reconciliation`. |
 | crm-opportunity-lifecycle | Qualify, advance, approve, hand off, and close pre-sales opportunities. |
