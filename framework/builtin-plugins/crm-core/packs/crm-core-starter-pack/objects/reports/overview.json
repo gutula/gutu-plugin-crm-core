@@ -1,0 +1,19 @@
+{
+  "pluginId": "crm-core",
+  "reports": [
+    "Lead Details",
+    "Opportunity Summary",
+    "Pipeline by Stage",
+    "Sales Stage Analysis"
+  ],
+  "exceptionQueues": [
+    "lead-dedupe-review",
+    "handoff-readiness-blockers",
+    "stale-opportunity-followups"
+  ],
+  "operationalScenarios": [
+    "lead-capture",
+    "qualification-and-scoring",
+    "opportunity-handoff-to-sales"
+  ]
+}

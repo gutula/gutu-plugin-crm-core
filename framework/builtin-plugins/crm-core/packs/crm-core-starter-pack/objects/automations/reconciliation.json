@@ -1,0 +1,10 @@
+{
+  "automationId": "crm-core.reconciliation.default",
+  "trigger": "exception-record-opened",
+  "action": "crm.reconciliation.run",
+  "queues": [
+    "lead-dedupe-review",
+    "handoff-readiness-blockers",
+    "stale-opportunity-followups"
+  ]
+}

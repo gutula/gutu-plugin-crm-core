@@ -1,0 +1,25 @@
+{
+  "packageId": "crm-core",
+  "packName": "crm-core-starter-pack",
+  "expectedActions": [
+    "crm.leads.capture",
+    "crm.opportunities.advance",
+    "crm.handoffs.prepare"
+  ],
+  "expectedResources": [
+    "crm.leads",
+    "crm.opportunities",
+    "crm.forecasts"
+  ],
+  "expectedReports": [
+    "Lead Details",
+    "Opportunity Summary",
+    "Pipeline by Stage",
+    "Sales Stage Analysis"
+  ],
+  "expectedExceptionQueues": [
+    "lead-dedupe-review",
+    "handoff-readiness-blockers",
+    "stale-opportunity-followups"
+  ]
+}

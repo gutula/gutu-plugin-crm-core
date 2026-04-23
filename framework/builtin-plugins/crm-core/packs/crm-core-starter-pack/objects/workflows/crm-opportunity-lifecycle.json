@@ -1,0 +1,9 @@
+{
+  "workflowId": "crm-opportunity-lifecycle",
+  "actors": [
+    "sales-rep",
+    "manager",
+    "revops"
+  ],
+  "description": "Qualify, advance, approve, hand off, and close pre-sales opportunities."
+}

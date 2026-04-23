@@ -1,0 +1,9 @@
+{
+  "workspace": "crm",
+  "route": "/admin/business/crm",
+  "pageTitle": "CRM Control Room",
+  "defaultRecordState": "draft",
+  "defaultApprovalState": "pending",
+  "defaultPostingState": "unposted",
+  "defaultFulfillmentState": "none"
+}
