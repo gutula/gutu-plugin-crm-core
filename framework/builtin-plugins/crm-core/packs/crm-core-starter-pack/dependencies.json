@@ -8,6 +8,28 @@
     "workflow-core",
     "party-relationships-core"
   ],
+  "recommendedPlugins": [
+    "sales-core"
+  ],
+  "capabilityEnhancingPlugins": [
+    "support-service-core",
+    "ai-assist-core",
+    "analytics-bi-core"
+  ],
+  "integrationOnlyPlugins": [
+    "business-portals-core"
+  ],
+  "suggestedPacks": [
+    "sector-ecommerce",
+    "sector-education",
+    "sector-financial-services-compliance",
+    "sector-healthcare",
+    "sector-nonprofit",
+    "sector-professional-services",
+    "sector-retail",
+    "sector-trading-distribution"
+  ],
+  "standaloneSupported": true,
   "requiredCapabilities": [
     "ui.register.admin",
     "api.rest.mount",

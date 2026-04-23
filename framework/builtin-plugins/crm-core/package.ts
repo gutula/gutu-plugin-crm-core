@@ -54,9 +54,61 @@ export default definePackage({
       "packageId": "party-relationships-core",
       "class": "required",
       "rationale": "Required for CRM Core to keep its boundary governed and explicit."
+    },
+    {
+      "packageId": "sales-core",
+      "class": "optional",
+      "rationale": "Recommended with CRM Core for smoother production adoption and operator experience."
+    },
+    {
+      "packageId": "support-service-core",
+      "class": "capability-enhancing",
+      "rationale": "Improves CRM Core with deeper downstream automation, visibility, or workflow coverage."
+    },
+    {
+      "packageId": "ai-assist-core",
+      "class": "capability-enhancing",
+      "rationale": "Improves CRM Core with deeper downstream automation, visibility, or workflow coverage."
+    },
+    {
+      "packageId": "analytics-bi-core",
+      "class": "capability-enhancing",
+      "rationale": "Improves CRM Core with deeper downstream automation, visibility, or workflow coverage."
+    },
+    {
+      "packageId": "business-portals-core",
+      "class": "integration-only",
+      "rationale": "Only needed when CRM Core must exchange data or actions with adjacent or external surfaces."
     }
   ],
-  "optionalWith": [],
+  "recommendedPlugins": [
+    "sales-core"
+  ],
+  "capabilityEnhancingPlugins": [
+    "support-service-core",
+    "ai-assist-core",
+    "analytics-bi-core"
+  ],
+  "integrationOnlyPlugins": [
+    "business-portals-core"
+  ],
+  "suggestedPacks": [
+    "sector-ecommerce",
+    "sector-education",
+    "sector-financial-services-compliance",
+    "sector-healthcare",
+    "sector-nonprofit",
+    "sector-professional-services",
+    "sector-retail",
+    "sector-trading-distribution"
+  ],
+  "standaloneSupported": true,
+  "installNotes": [
+    "Useful standalone for pre-sales teams; Sales is the natural next plugin once commercial handoff is needed."
+  ],
+  "optionalWith": [
+    "sales-core"
+  ],
   "conflictsWith": [],
   "providesCapabilities": [
     "crm.leads",

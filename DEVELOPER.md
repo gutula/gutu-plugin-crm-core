@@ -54,6 +54,11 @@ Owns lead, opportunity, and pre-sales readiness state so commercial handoff stay
 | Field | Value |
 | --- | --- |
 | Depends On | `auth-core`, `org-tenant-core`, `role-policy-core`, `audit-core`, `workflow-core`, `party-relationships-core` |
+| Recommended Plugins | `sales-core` |
+| Capability Enhancing | `support-service-core`, `ai-assist-core`, `analytics-bi-core` |
+| Integration Only | `business-portals-core` |
+| Suggested Packs | `sector-ecommerce`, `sector-education`, `sector-financial-services-compliance`, `sector-healthcare`, `sector-nonprofit`, `sector-professional-services`, `sector-retail`, `sector-trading-distribution` |
+| Standalone Supported | Yes |
 | Requested Capabilities | `ui.register.admin`, `api.rest.mount`, `data.write.crm`, `events.publish.crm` |
 | Provides Capabilities | `crm.leads`, `crm.opportunities`, `crm.forecasts` |
 | Owns Data | `crm.leads`, `crm.opportunities`, `crm.activities`, `crm.forecasts` |

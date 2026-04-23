@@ -61,11 +61,26 @@ This tier is justified because unit coverage exists, contract coverage exists, i
 | Manifest ID | `crm-core` |
 | Repo | [gutu-plugin-crm-core](https://github.com/gutula/gutu-plugin-crm-core) |
 | Depends On | `auth-core`, `org-tenant-core`, `role-policy-core`, `audit-core`, `workflow-core`, `party-relationships-core` |
+| Recommended Plugins | `sales-core` |
+| Capability Enhancing | `support-service-core`, `ai-assist-core`, `analytics-bi-core` |
+| Integration Only | `business-portals-core` |
+| Suggested Packs | `sector-ecommerce`, `sector-education`, `sector-financial-services-compliance`, `sector-healthcare`, `sector-nonprofit`, `sector-professional-services`, `sector-retail`, `sector-trading-distribution` |
+| Standalone Supported | Yes |
 | Requested Capabilities | `ui.register.admin`, `api.rest.mount`, `data.write.crm`, `events.publish.crm` |
 | Provided Capabilities | `crm.leads`, `crm.opportunities`, `crm.forecasts` |
 | Runtime | bun>=1.3.12 |
 | Database | postgres, sqlite |
 | Integration Model | Actions+Resources+Jobs+Workflows+UI |
+
+## Installation Guidance
+
+- Required plugins: `auth-core`, `org-tenant-core`, `role-policy-core`, `audit-core`, `workflow-core`, `party-relationships-core`
+- Recommended plugins: `sales-core`
+- Capability-enhancing plugins: `support-service-core`, `ai-assist-core`, `analytics-bi-core`
+- Integration-only plugins: `business-portals-core`
+- Suggested packs: `sector-ecommerce`, `sector-education`, `sector-financial-services-compliance`, `sector-healthcare`, `sector-nonprofit`, `sector-professional-services`, `sector-retail`, `sector-trading-distribution`
+- Standalone supported: yes
+- Useful standalone for pre-sales teams; Sales is the natural next plugin once commercial handoff is needed.
 
 ## Capability Matrix
 
